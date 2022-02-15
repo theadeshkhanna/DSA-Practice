@@ -20,14 +20,12 @@ public:
                 while(p < q) {
                     swap(arr[p++], arr[q--]);
                 }
-                // reverse(arr + i, arr + n - 1)
             } else {
                 int p = i;
                 int q = i + k - 1;
                 while(p < q) {
                     swap(arr[p++], arr[q--]);
                 }
-                // reverse(arr + i, arr + i + k - 1)   
             }
         }
     }
