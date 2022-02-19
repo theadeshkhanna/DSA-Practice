@@ -9,11 +9,8 @@ class Solution{
         sort(a.begin(), a.end());
         long long ans = INT_MAX;
         
-        for (int i = 0; i < n - m + 1; i++) {
-            long long j = i + m - 1;
-            
-            ans = min(ans, a[j] - a[i]);
-        }
+        for (int i = 0; i < n - m + 1; i++) 
+            ans = min(ans, a[i + m - 1] - a[i]);
         
         return ans;
     }   
