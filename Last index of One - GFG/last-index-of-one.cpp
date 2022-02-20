@@ -10,15 +10,16 @@ class Solution{
     int lastIndex(string s) 
     {
         int n = s.size();
-        int maxi = INT_MIN;
+        int pos = -1;
         
-        for (int i = 0; i < n; i++) {
+        for (int i = n - 1; i >= 0; i--) {
             if (s[i] == '1') {
-                maxi = max(maxi, i);
+                pos = i;
+                break;
             }
         }
         
-        return maxi == INT_MIN ? -1 : maxi;
+        return pos;
     }
 
 };
