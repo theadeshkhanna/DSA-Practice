@@ -2,19 +2,21 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
-        double val = floor( n / 2 );
-        map<int, int> m;
-        map<int, int>::iterator it;
-        for (int i = 0; i < n; i++) {
-            m[nums[i]]++;
-        }
+        int cnt = 0;
+        int ans = 0;
         
-        for (it=m.begin(); it!=m.end(); it++) {
-            if (it->second > val) {
-                return it->first;
+        for (int i = 0; i < n; i++) {
+            if (cnt == 0) {
+                ans = nums[i];
+            }
+            
+            if (nums[i] == ans) {
+                cnt += 1;
+            } else {
+                cnt -= 1;
             }
         }
         
-        return 0;
+        return ans;
     }
 };
