@@ -7,14 +7,11 @@ public:
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (nums[i] + nums[j] == target && i != j) {
-                    cout << i << " " << j << endl;
                     cnt++;
                 }
             }
         }
-        
-        cout << "----" << endl;
-        
+                
         return cnt;
     }
 };
