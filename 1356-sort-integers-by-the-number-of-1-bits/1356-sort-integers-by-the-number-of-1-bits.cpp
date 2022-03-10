@@ -1,5 +1,6 @@
 class Solution {
 private:
+    
      static int numberCount(int a) {
         int cnt = 0;
         while(a) {
@@ -19,6 +20,7 @@ private:
             return (p < q);
         }
     }
+    
 public:
     vector<int> sortByBits(vector<int>& arr) {
         sort(arr.begin(), arr.end(), compare);
