@@ -3,17 +3,20 @@ public:
     vector<int> v;
     NumArray(vector<int>& nums) {
         for (int i = 0; i < nums.size(); i++) {
-            v.push_back(nums[i]);
+            if (i == 0) {
+                v.push_back(nums[i]);
+            } else {
+                v.push_back(v[i - 1] + nums[i]);
+            }
         }
     }
     
     int sumRange(int left, int right) {
-        int sum = 0;
-        for (int i = left; i <= right; i++) {
-            sum += v[i];
+        if (left == 0) {
+            return v[right];
+        } else {
+            return v[right] - v[left - 1];
         }
-        
-        return sum;
     }
 };
 
