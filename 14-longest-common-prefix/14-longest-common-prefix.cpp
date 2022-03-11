@@ -8,7 +8,7 @@ public:
         
         string prefix = strs[0];
         
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             while(strs[i].find(prefix) != 0) {
                 prefix = prefix.substr(0, prefix.size() - 1);
             }
