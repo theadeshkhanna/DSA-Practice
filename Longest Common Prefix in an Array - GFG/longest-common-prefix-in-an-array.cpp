@@ -18,7 +18,7 @@ class Solution{
         
         string prefix = arr[0];
         
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             while(arr[i].find(prefix) != 0) {
                 prefix = prefix.substr(0, prefix.size() - 1);
             }
