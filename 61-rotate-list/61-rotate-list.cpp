@@ -26,20 +26,6 @@ public:
             len++;
         }
         
-        if (k < len) {
-            for (int i = k; i > 0; i--) {
-                int n = v.size();
-                int lastVal = v[n - 1];
-        
-                for (int i = 0; i < v.size(); i++) {
-                    if (n - i > 1) {
-                        v.at(n - i - 1) = v.at(n - i - 2);    
-                    }
-                }
-        
-                v.at(0) = lastVal;   
-            }   
-        } else {
             int t = k % len;
             for (int i = t; i > 0; i--) {
                 int n = v.size();
@@ -53,7 +39,6 @@ public:
         
                 v.at(0) = lastVal;   
             }  
-        }
         
         ListNode* ans = new ListNode(v[0]);
         ListNode* tail = ans;
