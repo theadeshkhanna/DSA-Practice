@@ -11,34 +11,25 @@
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
+        ListNode* ans = new ListNode(0);
+        ListNode* p = ans;
         ListNode* temp = head;
-        vector<int> v;
-        vector<int> k;
-        while(temp != NULL) {
-            v.push_back(temp->val);
-            temp = temp->next;
-        }
         
+        temp = temp->next;
         int sum = 0;
         
-        for (int i = 0; i < v.size(); i++) {
-            if (v[i] == 0) {
-                k.push_back(sum);
-                sum = 0;
-            } else {
-                sum += v[i];
+        while(temp != NULL) {
+            while(temp->val != 0) {
+                sum += temp->val;
+                temp = temp->next;
             }
+            
+            p->next = new ListNode(sum);
+            p = p->next;
+            temp = temp->next;
+            sum = 0;
         }
         
-        ListNode* ans = new ListNode(k[1]);
-        ListNode* tail = ans;
-        
-        for (int i = 2; i < k.size(); i++) {
-            ListNode* a = new ListNode(k[i]);
-            tail->next = a;
-            tail = a;
-        }
-        
-        return ans;
+        return ans->next;
     }
 };
