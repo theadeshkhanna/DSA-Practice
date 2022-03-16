@@ -8,12 +8,12 @@ public:
         for (int i = 0; i < n; i++) {
             s.push(pushed[i]);
             
-            while(s.size() && s.top() == popped[j]) {
+            while(!s.empty() && s.top() == popped[j]) {
                 s.pop();
                 j++;
             }
         }
         
-        return s.size() == 0;
+        return s.empty();
     }
 };
