@@ -13,26 +13,18 @@ class Solution{
     public:
     vector<int> SortBinaryArray(vector<int> a)
     {
-        int cnt0 = 0;
+        int i = 0, j = 0;
         int n = a.size();
         
-        for (int i = 0; i < n; i++) {
-            if (a[i] == 0) cnt0++;
+        while(i < n) {
+            if (a[i] == 0) {
+                swap(a[i], a[j++]);
+            }
+            
+            i++;
         }
         
-        int cnt1 = n - cnt0;
-        
-        vector<int> ans;
-        
-        for (int i = 0; i < cnt0; i++) {
-            ans.push_back(0);
-        }
-        
-        for (int i = 0; i < cnt1; i++) {
-            ans.push_back(1);
-        }
-        
-        return ans;
+        return a;
     }
 };
 
