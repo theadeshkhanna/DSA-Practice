@@ -9,17 +9,8 @@ public:
         }
         
         vector<vector<int>> res(r, vector<int>(c));
-        int row = 0, col = 0;
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
-                res[row][col] = mat[i][j];
-                col += 1;
-                if(col == c) {
-                    row += 1;
-                    col = 0;
-                }
-            }
-        }
+        for (int i = 0; i < r * c; i++)
+            res[i/c][i%c] = mat[i/n][i%n];
         return res;
     }
 };
