@@ -103,14 +103,14 @@ class Solution
     
     vector<int> verticalOrder(Node *root)
     {
-              map<int,vector<int>>mp;
-      pair<Node*,int>p;p.first=root;
-      p.second=0;vector<int>ans;
+      map<int,vector<int>> mp;
+      vector<int> ans;
       queue<pair<Node*,int>> q;
-      q.push(p);
+      
+      q.push({root, 0});
       while(!q.empty())
       {
-          p=q.front();
+          auto p=q.front();
           mp[p.second].push_back(p.first->data);
           if(p.first->left!=NULL) {q.push(make_pair(p.first->left,p.second-1)); }
           if(p.first->right!=NULL){ q.push(make_pair(p.first->right,p.second+1));}
