@@ -110,36 +110,27 @@ class Solution
     //Function to convert binary tree to doubly linked list and return it.
     Node * bToDLL(Node *root)
     {
-        vector<int> order;
-        vector<int> list = inorder(root, order);
+        bool isFirst = true;
+        Node* head = NULL;
+        Node* tail = NULL;
+        solve(root, head, tail, isFirst);
         
-        Node* ans = new Node();
-        Node* val = ans;
-        ans->data = list[0];
-        
-        for (int i = 1; i < list.size(); i++) {
-            Node* a = new Node();
-            a->data = list[i];
-            ans->right = a;
-            a->left = ans;
-            
-            ans = ans->right;
-        }
-        
-        return val;
+        return head;
     }
     
-    vector<int> inorder(Node* root, vector<int>& in) {
-        if (root->left) {
-            inorder(root->left, in);
+    void solve(Node* root, Node* &head, Node* &tail, bool &isFirst) {
+        if (!root) return;
+        solve(root->left, head, tail, isFirst);
+        if (isFirst) {
+            isFirst = false;
+            head = root;
+            tail = root;
+        } else {
+            tail->right = root;
+            tail->right->left = tail;
+            tail = tail->right;
         }
-        
-        in.push_back(root->data);
-        
-        if (root->right) {
-            inorder(root->right, in);
-        }
-        return in;
+        solve(root->right, head, tail, isFirst);
     }
 };
 
