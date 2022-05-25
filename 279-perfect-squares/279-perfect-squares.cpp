@@ -1,29 +1,25 @@
 class Solution {
 public:
     int numSquares(int n) {
-        int* ans = new int[n + 1];
-        for (int i = 0; i <= n; i++) {
-            ans[i] = -1;
-        }
-        
-        return helper(n, ans);
-    }
-    
-    int helper(int n, int* ans) {
         if (sqrt(n) == floor(sqrt(n))) {
-            ans[n] = 1;
-            return ans[n];
+            return 1;
         }
 
-        if (ans[n] != -1) {
-            return ans[n];
-        }
+        int* ans = new int[n + 1];
 
-        int val = n;
-        for (int i = 1; i * i <= n; i++) {
-            ans[n] = val = min(val, 1 + helper(n - i * i, ans));
+        ans[0] = 0;
+        ans[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            int min = i;
+            for (int j = 1; j * j <= i; j++) {
+                int left = i - j * j;
+                if (ans[left] < min) {
+                    min = ans[left];
+                }
+            }
+            ans[i] = 1 + min;
         }
-    
 
         return ans[n];
     }
