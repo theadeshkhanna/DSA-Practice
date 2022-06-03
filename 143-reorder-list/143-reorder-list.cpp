@@ -10,39 +10,41 @@
  */
 class Solution {
 public:
+    ListNode* reverse(ListNode* head) {
+        if (head == NULL || head->next == NULL) {
+            return head;
+        }
+        
+        ListNode* small = reverse(head->next);
+        
+        ListNode* tail = head->next;
+        tail->next = head;
+        head->next = NULL;
+        
+        return small;
+    }
+    
     void reorderList(ListNode* head) {
-        vector<int> v;
-        vector<int> x;
+        ListNode* slow = head;
+        ListNode* fast = head->next;
         
-        ListNode* temp = head;
-        while(temp) {
-            v.push_back(temp->val);
-            temp = temp->next;
+        while(fast && fast->next) {
+            fast = fast->next->next;
+            slow = slow->next;
         }
         
-        int i = 0;
-        int j = v.size() - 1;
-        int flag = 0;
+        ListNode* head2 = slow->next;
+        slow->next = NULL;
         
-        while(i <= j) {
-            if (flag == 0) {
-                x.push_back(v[i++]);
-                flag = 1;
-            } else {
-                x.push_back(v[j--]);
-                flag = 0;
-            }
+        head2 = reverse(head2);
+        
+        ListNode* h = head;
+        while(head2) {
+            ListNode* temp = head2->next;
+            head2->next = h->next;
+            h->next = head2;
+            head2 = temp;
+            h = h->next->next;
         }
-        
-        ListNode* a = new ListNode(x[0]);
-        ListNode* tail = a;
-        
-        for (int i = 1; i < x.size(); i++) {
-            ListNode* b = new ListNode(x[i]);
-            tail->next = b;
-            tail = b;
-        }
-        
-        *head = *a;
     }
 };
