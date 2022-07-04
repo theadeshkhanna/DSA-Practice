@@ -8,17 +8,17 @@ class Solution{
     public:
     vector<pair<int,int>> allPairs(int A[], int B[], int N, int M, int X)
     {
-        unordered_set<int> m;
+        unordered_map<int, int> m;
         vector<pair<int, int>> v;
         
         sort(A, A + N);
         
         for (int i = 0; i < M; i++) {
-            m.insert(B[i]);
+            m[B[i]]++;
         }
         
         for (int j = 0; j < N; j++) {
-            if (m.find(X - A[j]) != m.end()) {
+            if (m.count(X - A[j]) > 0) {
                 v.push_back({A[j], X - A[j]});
             }
         }
