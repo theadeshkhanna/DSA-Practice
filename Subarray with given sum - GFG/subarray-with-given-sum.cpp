@@ -9,24 +9,24 @@ class Solution
     public:
     //Function to find a continuous sub-array which adds up to a given number.
     vector<int> subarraySum(int arr[], int n, long long s)
-    { 
-        int csum = arr[0];
-        int start = 0;
+    {
+        int j = 0;
+        int sum = arr[0];
         vector<int> ans;
+        
         for (int i = 1; i <= n; i++) {
-            while(csum > s && start < i - 1) {
-                csum = csum - arr[start];
-                start++;
+            while(sum > s && j < i - 1) {
+                sum -= arr[j++];
             }
             
-            if (csum == s) {
-                ans.push_back(start + 1);
+            if (sum == s) {
+                ans.push_back(j + 1);
                 ans.push_back(i);
                 return ans;
             }
             
             if (i < n) {
-                csum = csum + arr[i];
+                sum += arr[i];
             }
         }
         
