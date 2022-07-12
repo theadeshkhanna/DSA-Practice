@@ -9,7 +9,7 @@ class Solution
     public:
     //Function to find a continuous sub-array which adds up to a given number.
     vector<int> subarraySum(int arr[], int n, long long s)
-    {
+    { 
         int csum = arr[0];
         int start = 0;
         vector<int> ans;
