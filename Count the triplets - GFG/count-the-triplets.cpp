@@ -12,19 +12,21 @@ public:
 	int countTriplet(int arr[], int n) {
 	    sort(arr, arr + n);
 	    int cnt = 0;
-	    for (int i = n - 1; i >= 2; i--) {
+	    
+	    for (int i = 0; i < n; i++) {
+	        int s = arr[i];
 	        int l = 0;
-	        int r = i - 1;
+	        int h = n - 1;
 	        
-	        while(l < r) {
-	            if (arr[l] + arr[r] == arr[i]) {
+	        while(l < h) {
+	            if (arr[l] + arr[h] == s) {
 	                cnt++;
 	                l++;
-	                r--;
-	            } else if (arr[l] + arr[r] < arr[i]) {
+	                h--;
+	            } else if (arr[l] + arr[h] < s) {
 	                l++;
 	            } else {
-	                r--;
+	                h--;
 	            }
 	        }
 	    }
