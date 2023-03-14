@@ -1,0 +1,46 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// } Driver Code Ends
+class Solution{
+public:
+	
+	void printTriangle(int n) {
+	    
+	    int mx = 2 * n - 1;
+	    
+	    for (int i = n; i >= 1; i--) {
+	        
+	        int cx = 2 * i - 1;
+	        int rx = mx - cx;
+	        
+	        for (int j = 0; j < rx / 2; j++) {
+	            cout << " ";
+	        }
+	        
+	        for (int j = 0; j < cx; j++) {
+	            cout << "*";
+	        }
+	        
+	        cout << endl;
+	    }
+	}
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        
+        Solution ob;
+        ob.printTriangle(n);
+    }
+    return 0;
+}
+// } Driver Code Ends
