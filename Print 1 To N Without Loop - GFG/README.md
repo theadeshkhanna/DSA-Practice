@@ -1,7 +1,6 @@
 # Print 1 To N Without Loop
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Print numbers from <strong>1 to N</strong> without the help of loops.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Print numbers from <strong>1 to N</strong> without the help of loops.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -28,6 +27,5 @@
 
 <p><br>
 <span style="font-size:18px"><strong>Constraints:</strong><br>
-1 &lt;= N &lt;= 10<sup>5</sup></span></p>
- <p></p>
-            </div>
+1 &lt;= N &lt;= 1000</span></p>
+</div>
