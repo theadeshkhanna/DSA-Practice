@@ -19,7 +19,7 @@ public:
 	        } else if (large < arr[i]) {
 	            secondLarge = large;
 	            large = arr[i];
-	        } else if (large > arr[i] && secondLarge < arr[i]) {
+	        } else if (large != arr[i] && secondLarge < arr[i]) {
 	            secondLarge = arr[i];
 	        }
 	    }
