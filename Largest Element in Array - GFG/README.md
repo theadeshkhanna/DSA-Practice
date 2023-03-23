@@ -1,7 +1,6 @@
 # Largest Element in Array
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array <strong>A[] </strong>of size <strong>n</strong>. The task is to find the largest element in it.</span><br>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array <strong>A[] </strong>of size <strong>n</strong>. The task is to find the largest element in it.</span><br>
 &nbsp;</p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -42,5 +41,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 1 &lt;= n&lt;= 10<sup>3</sup><br>
 0 &lt;= A[i] &lt;= 10<sup>3</sup><br>
 Array may contain duplicate elements.&nbsp;</span></p>
- <p></p>
-            </div>
+</div>
