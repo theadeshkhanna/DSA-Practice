@@ -1,7 +1,6 @@
 # Searching an element in a sorted array
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array&nbsp;<strong>arr[] </strong>sorted in ascending order of size <strong>N</strong> and an integer <strong>K</strong>. Check if K&nbsp;is present in the array or not.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array&nbsp;<strong>arr[] </strong>sorted in ascending order of size <strong>N</strong> and an integer <strong>K</strong>. Check if K&nbsp;is present in the array or not.</span></p>
 
 <p><br>
 <span style="font-size:18px"><strong>Example 1:</strong></span></p>
@@ -43,5 +42,4 @@ You don't need to read input or print anything. Complete the function&nbsp;<stro
 1 &lt;= arr[i] &lt;= 10<sup>6</sup></span></p>
 
 <p>&nbsp;</p>
- <p></p>
-            </div>
+</div>
