@@ -1,7 +1,6 @@
 # Union of Two Sorted Arrays
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Union of two arrays can be defined as the common and distinct elements in the two arrays.<br>
+## Easy
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Union of two arrays can be defined as the common and distinct elements in the two arrays.<br>
 Given two sorted arrays of size <strong>n</strong> and <strong>m</strong>&nbsp;respectively, find their union.</span></p>
 
 <p><br>
@@ -48,5 +47,4 @@ both the arrays are: 1 2.</span></pre>
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= n, m&nbsp;&lt;= 10<sup>5</sup><br>
 1 &lt;= arr[i], brr[i] &lt;= 10<sup>6</sup></span></p>
- <p></p>
-            </div>
+</div>
