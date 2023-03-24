@@ -1,9 +1,9 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h> 
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution{
     public:
     // Function to find element in sorted array
@@ -12,21 +12,17 @@ class Solution{
     // K: element to be searche
     int searchInSorted(int arr[], int n, int k) 
     { 
-        int lo = 0;
-        int hi = n - 1;
-        
-        while(lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid] == k) return 1;
-            else if (arr[mid] < k) lo = mid + 1;
-            else hi = mid - 1;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == k) {
+                return 1;
+            }
         }
         
         return -1;
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 
 int main(void) 
@@ -51,4 +47,5 @@ int main(void)
 
 	return 0; 
 } 
-  // } Driver Code Ends
+
+// } Driver Code Ends
