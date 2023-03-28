@@ -1,25 +1,24 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
-
+// } Driver Code Ends
 class Solution{
     public:
     vector<pair<int,int>> allPairs(int A[], int B[], int N, int M, int X)
     {
-        unordered_map<int, int> m;
-        vector<pair<int, int>> v;
-        
         sort(A, A + N);
         
+        map<int, int> m;
+        vector<pair<int, int>> v;
+        
         for (int i = 0; i < M; i++) {
-            m[B[i]]++;
+            m[B[i]] = i;
         }
         
-        for (int j = 0; j < N; j++) {
-            if (m.count(X - A[j]) > 0) {
-                v.push_back({A[j], X - A[j]});
+        for (int i = 0; i < N; i++) {
+            if (m.find(X - A[i]) != m.end()) {
+                v.push_back({A[i], X - A[i]});
             }
         }
         
@@ -28,7 +27,7 @@ class Solution{
 };
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() {
 	long long t;
 	cin >> t;
@@ -59,4 +58,5 @@ int main() {
         }
 	}
 	return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
