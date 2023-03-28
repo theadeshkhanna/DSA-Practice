@@ -1,11 +1,11 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial template for C++
 
 #include<bits/stdc++.h>
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 
 class Solution{
@@ -13,33 +13,33 @@ class Solution{
      // Function to find majority element in the array
     // a: input array
     // size: size of input array
-    int majorityElement(int a[], int size)
+    int majorityElement(int A[], int N)
     {
-           int c = 0, n = -1;
-        for(int i=0;i<size;i++) {
-            if(c == 0){
-                n = a[i];
-                c = 1;
-            } else {
-                if(a[i] == n) {
-                    c++;
-                } else {
-                    c--;
-                }
-            }
-        }
-        int app = 0;
-        for(int i=0;i<size;i++) {
-            if(n == a[i]) {
-                app++;
-            }
-        }
-        if(app > size/2) return n;
-        return -1;
+        
+        int cnt = 0;
+        int el;
+        
+        for (int i = 0; i < N; i++) {
+            if (cnt == 0) {
+                cnt = 1;
+                el = A[i];
+            } else if (el == A[i]) cnt++;
+            else cnt--;
+         }
+         
+         int cnt1 = 0;
+         
+         for (int i = 0; i < N; i++) {
+             if (A[i] == el) cnt1++;
+         }
+         
+         if (cnt1 > N / 2) return el;
+         else return -1;
+        
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main(){
 
@@ -60,4 +60,5 @@ int main(){
 
     return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
